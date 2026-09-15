@@ -1507,6 +1507,20 @@ a:focus {
     border-right: 1px solid #ffffff;
 }
 
+/* Footer phone and email links */
+.footer .footer-menu p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer .footer-menu p a:hover,
+.footer .footer-menu p a:active,
+.footer .footer-menu p a:focus {
+    color: #ffffff;
+    text-decoration: none;
+    outline: none;
+}
+
 .footer .footer-menu p:last-child {
     border: none;
 }
