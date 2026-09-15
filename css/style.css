@@ -294,22 +294,22 @@ a:focus {
 }
 
 .hero .hero-text h2 {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    min-height: 48px;
     margin: 0;
-    height: 35px;
     color: #ffffff;
     font-size: 35px;
     font-weight: 600;
+    line-height: 1.35;
 }
 
 .hero .hero-text .typed-text {
-    display: none;
+    display: none !important;
 }
 
 .hero .hero-text .typed-cursor {
-    font-size: 35px;
-    font-weight: 300;
-    color: #ffffff;
+    display: none !important;
 }
 
 .hero .hero-btn .btn {
@@ -349,7 +349,7 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 25px;
-        height: 25px;
+        min-height: 35px;
     }
     
     .hero .hero-btn .btn {
@@ -381,7 +381,7 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 22px;
-        height: 22px;
+        min-height: 32px;
     }
     
     .hero .hero-btn .btn {
@@ -401,7 +401,7 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 18px;
-        height: 18px;
+        min-height: 28px;
     }
     
     .hero .hero-btn .btn {
