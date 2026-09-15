@@ -53,37 +53,31 @@
         rel="stylesheet"
     >
 
-    <!-- Rotating Hero Title CSS -->
     <style>
-        .hero .hero-text h2#rotating-title {
-            display: block;
-            width: 100%;
-            min-height: 70px;
-            margin: 0;
-            color: #ffffff;
-            font-size: 35px;
-            font-weight: 600;
-            line-height: 1.35;
+        #rotating-title {
+            white-space: normal;
         }
 
-        @media (max-width: 991.98px) {
-            .hero .hero-text h2#rotating-title {
-                font-size: 25px;
-                min-height: 65px;
+        #rotating-text {
+            display: inline;
+        }
+
+        #rotating-cursor {
+            display: inline-block;
+            margin-left: 3px;
+            font-weight: 300;
+            animation: rotatingCursorBlink 0.7s steps(1) infinite;
+        }
+
+        @keyframes rotatingCursorBlink {
+            0%,
+            50% {
+                opacity: 1;
             }
-        }
 
-        @media (max-width: 767.98px) {
-            .hero .hero-text h2#rotating-title {
-                font-size: 22px;
-                min-height: 60px;
-            }
-        }
-
-        @media (max-width: 575.98px) {
-            .hero .hero-text h2#rotating-title {
-                font-size: 18px;
-                min-height: 50px;
+            51%,
+            100% {
+                opacity: 0;
             }
         }
     </style>
@@ -214,7 +208,9 @@
 
 
                             <!-- Rotating title -->
-                            <h2 id="rotating-title"></h2>
+                            <h2 id="rotating-title">
+                                <span id="rotating-text"></span><span id="rotating-cursor">|</span>
+                            </h2>
 
                         </div>
 
@@ -1285,8 +1281,6 @@
 
     <script src="lib/waypoints/waypoints.min.js"></script>
 
-    <script src="lib/typed/typed.min.js"></script>
-
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
@@ -1314,8 +1308,12 @@
         ];
 
 
-        const titleElement =
-            document.getElementById("rotating-title");
+        const textElement =
+            document.getElementById("rotating-text");
+
+
+        const cursorElement =
+            document.getElementById("rotating-cursor");
 
 
         let titleIndex = 0;
@@ -1333,7 +1331,7 @@
 
             if (!isDeleting) {
 
-                titleElement.textContent =
+                textElement.textContent =
                     currentTitle.substring(
                         0,
                         characterIndex + 1
@@ -1349,7 +1347,6 @@
                 ) {
 
                     isDeleting = true;
-
 
                     setTimeout(
                         typeTitle,
@@ -1367,7 +1364,7 @@
 
             } else {
 
-                titleElement.textContent =
+                textElement.textContent =
                     currentTitle.substring(
                         0,
                         characterIndex - 1
@@ -1380,7 +1377,6 @@
                 if (characterIndex === 0) {
 
                     isDeleting = false;
-
 
                     titleIndex =
                         (titleIndex + 1) %
@@ -1400,9 +1396,14 @@
                     typeTitle,
                     40
                 );
+
             }
 
         }
+
+
+        cursorElement.style.display =
+            "inline-block";
 
 
         typeTitle();
