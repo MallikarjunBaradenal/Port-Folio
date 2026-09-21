@@ -1,3 +1,3 @@
-# Mallikarjun Baradenal Portfolio
+Mallikarjun Baradenal Portfolio
 
-Personal portfolio website for Mallikarjun Parasappa Baradenal, a Computer Science undergraduate focused on backend development, machine learning, and scalable applications.
+Personal portfolio website showcasing my work, projects, skills, and experience as a Computer Science undergraduate focused on backend development, machine learning, data science, and scalable software applications.
