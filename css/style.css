@@ -133,99 +133,109 @@ a:focus {
    OPEN TO WORK CIRCULAR BADGE
    ========================================= */
 
+.hero .hero-btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.hero .hero-btn .btn {
+    margin-top: 35px;
+    flex: 0 0 auto;
+}
+
+.hero .hero-btn .btn:first-child {
+    margin-right: 0;
+}
+
 .open-to-work-badge {
     position: relative;
-
     width: 130px;
     height: 130px;
+    margin-left: 8px;
+    margin-top: 35px;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    text-decoration: none;
-    color: #111;
+    flex: 0 0 130px;
+    z-index: 5;
 
+    color: #111111;
+    text-decoration: none;
     border-radius: 50%;
 
-    flex-shrink: 0;
+    cursor: pointer;
+    isolation: isolate;
 
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-
-/* Circular text */
 
 .open-to-work-ring {
     position: absolute;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
+    display: block;
+    pointer-events: none;
 
     animation: openToWorkRotate 14s linear infinite;
 }
 
-/* Text */
-
 .open-to-work-ring text {
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 8px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
     fill: currentColor;
 }
 
-/* Center arrow */
-
 .open-to-work-arrow {
     position: relative;
-
     z-index: 2;
+
+    width: 54px;
+    height: 54px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 54px;
-    height: 54px;
-
     border: 1px solid currentColor;
-
     border-radius: 50%;
 
     font-size: 25px;
     font-weight: 400;
+    line-height: 1;
+
+    pointer-events: none;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
+        background-color 0.3s ease,
         color 0.3s ease;
 }
 
-/* Hover */
-
-.open-to-work-badge:hover {
+/* Keep the badge visible when the mouse is over it.
+   The global a:hover rule changes links to red, which
+   is almost identical to the hero background. */
+.open-to-work-badge:hover,
+.open-to-work-badge:focus,
+.open-to-work-badge:active {
+    color: #111111 !important;
+    text-decoration: none;
+    outline: none;
     transform: scale(1.05);
 }
 
-.open-to-work-badge:hover .open-to-work-arrow {
+.open-to-work-badge:hover .open-to-work-arrow,
+.open-to-work-badge:focus .open-to-work-arrow {
     transform: rotate(-45deg);
 }
-
-/* Rotation */
 
 @keyframes openToWorkRotate {
     from {
@@ -236,8 +246,6 @@ a:focus {
         transform: rotate(360deg);
     }
 }
-
-/* Accessibility */
 
 @media (prefers-reduced-motion: reduce) {
     .open-to-work-ring {
@@ -250,23 +258,87 @@ a:focus {
     }
 }
 
-/* Mobile */
+/* Tablet */
+@media (max-width: 991.98px) {
+    .hero .hero-btn {
+        gap: 8px;
+    }
 
-@media (max-width: 768px) {
     .open-to-work-badge {
-        width: 105px;
-        height: 105px;
+        width: 115px;
+        height: 115px;
+        flex-basis: 115px;
+        margin-left: 4px;
     }
 
     .open-to-work-ring text {
-        font-size: 8px;
-        letter-spacing: 1.5px;
+        font-size: 7px;
+        letter-spacing: 1.6px;
+    }
+
+    .open-to-work-arrow {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    .hero .hero-btn {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero .hero-btn .btn {
+        margin-top: 20px;
+    }
+
+    .open-to-work-badge {
+        width: 105px;
+        height: 105px;
+        flex-basis: 105px;
+        margin: 20px 0 0 0;
+    }
+
+    .open-to-work-ring text {
+        font-size: 7px;
+        letter-spacing: 1.4px;
     }
 
     .open-to-work-arrow {
         width: 44px;
         height: 44px;
         font-size: 20px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 575.98px) {
+    .hero .hero-btn {
+        gap: 8px;
+    }
+
+    .hero .hero-btn .btn {
+        padding: 8px 10px;
+        letter-spacing: 0;
+    }
+
+    .open-to-work-badge {
+        width: 92px;
+        height: 92px;
+        flex-basis: 92px;
+    }
+
+    .open-to-work-ring text {
+        font-size: 6.5px;
+        letter-spacing: 1.2px;
+    }
+
+    .open-to-work-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }
 
@@ -453,7 +525,6 @@ a:focus {
 }
 
 .hero .hero-btn .btn {
-    margin-top: 35px;
     color: #EF233C;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
@@ -464,10 +535,6 @@ a:focus {
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
-}
-
-.hero .hero-btn .btn:first-child {
-    margin-right: 10px;
 }
 
 @media (max-width: 991.98px) {
