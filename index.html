@@ -1058,14 +1058,35 @@
                             <form
                                 name="sentMessage"
                                 id="contactForm"
+                                action="https://formsubmit.co/mallikarjunbaradenal5@gmail.com"
+                                method="POST"
                                 novalidate="novalidate"
                             >
-                                <!-- FormSubmit configuration -->
-                                <input type="hidden" name="_subject" value="New Portfolio Contact — Mallikarjun Baradenal">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_url" value="https://mallikarjun-portfoolio.vercel.app/#contact">
 
+                                <!-- FormSubmit configuration -->
+                                <input
+                                    type="hidden"
+                                    name="_subject"
+                                    value="New Portfolio Contact — Mallikarjun Baradenal"
+                                >
+
+                                <input
+                                    type="hidden"
+                                    name="_captcha"
+                                    value="false"
+                                >
+
+                                <input
+                                    type="hidden"
+                                    name="_template"
+                                    value="table"
+                                >
+
+                                <input
+                                    type="hidden"
+                                    name="_url"
+                                    value="https://mallikarjun-portfoolio.vercel.app/#contact"
+                                >
 
 
                                 <div class="control-group">
@@ -1124,6 +1145,7 @@
                                     <textarea
                                         class="form-control"
                                         id="message"
+                                        name="message"
                                         placeholder="Message"
                                         required="required"
                                         data-validation-required-message="Please enter your message"
@@ -1134,7 +1156,12 @@
                                 </div>
 
 
-                                <div id="contactStatus" class="contact-status" role="status" aria-live="polite"></div>
+                                <div
+                                    id="contactStatus"
+                                    class="contact-status"
+                                    role="status"
+                                    aria-live="polite"
+                                ></div>
 
                                 <button
                                     class="btn"
@@ -1328,9 +1355,8 @@
 
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-
-    <script src="mail/contact.js"></script>
+    <!-- Old PHP/template contact-form scripts removed.
+         Contact form is handled by js/main.js using FormSubmit AJAX. -->
 
     <script src="js/main.js"></script>
 
