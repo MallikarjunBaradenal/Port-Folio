@@ -1060,6 +1060,12 @@
                                 id="contactForm"
                                 novalidate="novalidate"
                             >
+                                <!-- FormSubmit configuration -->
+                                <input type="hidden" name="_subject" value="New Portfolio Contact — Mallikarjun Baradenal">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_url" value="https://mallikarjun-portfoolio.vercel.app/#contact">
+
 
 
                                 <div class="control-group">
@@ -1068,6 +1074,7 @@
                                         type="text"
                                         class="form-control"
                                         id="name"
+                                        name="name"
                                         placeholder="Your Name"
                                         required="required"
                                         data-validation-required-message="Please enter your name"
@@ -1084,6 +1091,7 @@
                                         type="email"
                                         class="form-control"
                                         id="email"
+                                        name="email"
                                         placeholder="Your Email"
                                         required="required"
                                         data-validation-required-message="Please enter your email"
@@ -1100,6 +1108,7 @@
                                         type="text"
                                         class="form-control"
                                         id="subject"
+                                        name="subject"
                                         placeholder="Subject"
                                         required="required"
                                         data-validation-required-message="Please enter a subject"
@@ -1124,6 +1133,8 @@
 
                                 </div>
 
+
+                                <div id="contactStatus" class="contact-status" role="status" aria-live="polite"></div>
 
                                 <button
                                     class="btn"
