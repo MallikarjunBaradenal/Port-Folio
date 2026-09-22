@@ -130,6 +130,84 @@ a:focus {
 }
 
 /* =========================================
+   CONTACT FORM STATUS
+   ========================================= */
+
+.contact-status {
+    min-height: 24px;
+    margin: 0 0 15px 0;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Success message */
+
+.contact-status.success {
+    color: #ffffff;
+}
+
+
+/* Error message */
+
+.contact-status.error {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   CONTACT FORM SEND BUTTON
+   ========================================= */
+
+#sendMessageButton {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Disabled while sending */
+
+#sendMessageButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   CONTACT FORM INPUT FOCUS
+   ========================================= */
+
+.contact .contact-form input:focus,
+.contact .contact-form textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom-color: #ffffff;
+}
+
+
+/* =========================================
+   CONTACT FORM MOBILE FIX
+   ========================================= */
+
+@media (max-width: 767.98px) {
+
+    .contact-status {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    #sendMessageButton {
+        width: auto;
+    }
+
+}
+/* =========================================
    OPEN TO WORK CIRCULAR BADGE
    ========================================= */
 
