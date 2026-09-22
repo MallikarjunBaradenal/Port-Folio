@@ -129,6 +129,146 @@ a:focus {
     color: #414141;
 }
 
+/* =========================================
+   OPEN TO WORK CIRCULAR BADGE
+   ========================================= */
+
+.open-to-work-badge {
+    position: relative;
+
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #111;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Circular text */
+
+.open-to-work-ring {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    animation: openToWorkRotate 14s linear infinite;
+}
+
+/* Text */
+
+.open-to-work-ring text {
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    fill: currentColor;
+}
+
+/* Center arrow */
+
+.open-to-work-arrow {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid currentColor;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Hover */
+
+.open-to-work-badge:hover {
+    transform: scale(1.05);
+}
+
+.open-to-work-badge:hover .open-to-work-arrow {
+    transform: rotate(-45deg);
+}
+
+/* Rotation */
+
+@keyframes openToWorkRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .open-to-work-ring {
+        animation: none;
+    }
+
+    .open-to-work-badge,
+    .open-to-work-arrow {
+        transition: none;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .open-to-work-badge {
+        width: 105px;
+        height: 105px;
+    }
+
+    .open-to-work-ring text {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .open-to-work-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+}
 
 /**********************************/
 /*********** Nav Bar CSS **********/
